@@ -1,0 +1,15 @@
+.idea
+*~
+*.iml
+composer.phar
+composer.lock
+vendor/
+credentials.*
+**/vendor/
+**/build/
+.php_cs.cache
+.php-cs-fixer.cache
+.vscode/
+.kokoro/secrets.sh
+.phpunit.result.cache
+.DS_Store
