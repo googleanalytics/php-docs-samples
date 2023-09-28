@@ -41,7 +41,7 @@ use Google\Analytics\Data\V1beta\RunReportRequest;
  * TODO(developer): Replace this variable with your Google Analytics 4
  *   property ID before running the sample.
  */
-$property_id = '355158046';
+$property_id = 'YOUR-GA4-PROPERTY-ID';
 
 // [START analyticsdata_initialize]
 // Using a default constructor instructs the client to use the credentials
