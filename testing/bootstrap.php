@@ -12,14 +12,3 @@ if (file_exists($testDir . '/composer.json')) {
     }
     require_once $testDir . '/vendor/autoload.php';
 }
-
-/**
- * Load shared dependencies.
- * @see testing/composer.json
- */
-if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
-    throw new Exception('You need to run "composer install -d testing/" from '
-        . 'project root before running "phpunit" to run the samples tests.');
-}
-
-require_once __DIR__ . '/vendor/autoload.php';
