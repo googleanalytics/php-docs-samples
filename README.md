@@ -24,7 +24,7 @@ from PHP.
 ```
 3.  **Clone the repo** and cd into this directory
 ```sh
-    $ git clone https://github.com/GoogleCloudPlatform/php-docs-samples
+    $ git clone https://github.com/googleanalytics/php-docs-samples
     $ cd php-docs-samples/analyticsdata
 ```
 4.  **Install dependencies** via [Composer](http://getcomposer.org/doc/00-intro.md).
