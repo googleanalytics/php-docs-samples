@@ -1,48 +1,15 @@
-# Google Analytics Data API Samples
+# Google Analytics PHP Samples
 
-[![Open in Cloud Shell][shell_img]][shell_link]
+PHP samples for [Google Analytics APIs][ga].
 
-[shell_img]: http://gstatic.com/cloudssh/images/open-btn.svg
-[shell_link]: https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fgoogleanalytics%2Fphp-docs-samples
+Check out the `README.md` in one of the following directories to get started:
 
-## Description
+- Admin API: [README.md](google-analytics-admin/README.md)
+- Data API: [README.md](google-analytics-data/README.md)
 
-These samples show how to use the [Google Analytics Data API][analyticsdata-api]
-from PHP.
+## Contributing
 
-[analyticsdata-api]: https://developers.google.com/analytics/devguides/reporting/data/v1
+Contributions welcome! See the [Contributing Guide](CONTRIBUTING.md).
 
-## Build and Run
-1.  **Enable APIs** - [Enable the Analytics Data API](https://console.cloud.google.com/flows/enableapi?apiid=analyticsdata.googleapis.com)
-    and create a new project or select an existing project.
-2.  **Download The Credentials** - Configure your project using [Application Default Credentials][adc].
-    Click "Go to credentials" after enabling the APIs. Click "Create Credentials"
-    and select "Service Account Credentials" and download the credentials file. Then set the path to
-    this file to the environment variable `GOOGLE_APPLICATION_CREDENTIALS`:
-```sh
-    $ export GOOGLE_APPLICATION_CREDENTIALS=/path/to/credentials.json
-```
-3.  **Clone the repo** and cd into this directory
-```sh
-    $ git clone https://github.com/googleanalytics/php-docs-samples
-    $ cd php-docs-samples/analyticsdata
-```
-4.  **Install dependencies** via [Composer](http://getcomposer.org/doc/00-intro.md).
-    Run `php composer.phar install` (if composer is installed locally) or `composer install`
-    (if composer is installed globally).
-5.  **Replace `$property_id` variable** if present in the snippet with the
-value of the Google Analytics 4 property id you want to access.
-6.  **Run** with the command `php SNIPPET_NAME.php`. For example:
-```sh
-    $ php quickstart.php
-```
+[ga]: https://developers.google.com/analytics
 
-## Contributing changes
-
-* See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Licensing
-
-* See [LICENSE](LICENSE)
-
-[adc]: https://cloud.google.com/docs/authentication/production#obtaining_and_providing_service_account_credentials_manually
