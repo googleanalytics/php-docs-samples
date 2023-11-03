@@ -25,7 +25,7 @@ from PHP.
 3.  **Clone the repo** and cd into this directory
 ```sh
     $ git clone https://github.com/googleanalytics/php-docs-samples
-    $ cd php-docs-samples/analyticsdata
+    $ cd php-docs-samples/google-analytics-data
 ```
 4.  **Install dependencies** via [Composer](http://getcomposer.org/doc/00-intro.md).
     Run `php composer.phar install` (if composer is installed locally) or `composer install`
