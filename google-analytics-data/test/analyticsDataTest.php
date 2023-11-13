@@ -22,7 +22,7 @@ use Google\Cloud\TestUtils\TestTrait;
 use PHPUnit\Framework\TestCase;
 use Google\Analytics\Data\V1beta\Client\BetaAnalyticsDataClient;
 
-class analyticsDataTest extends TestCase
+class AnalyticsDataTest extends TestCase
 {
     use TestTrait;
 
