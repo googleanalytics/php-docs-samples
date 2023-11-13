@@ -100,6 +100,14 @@ class analyticsDataTest extends TestCase
         $this->assertStringContainsString('Report result', $output);
     }
 
+    public function testRunRunRealtimeReportWithMinuteRanges()
+    {
+        $propertyId = self::requireEnv('GA_TEST_PROPERTY_ID');
+        $output = $this->runFunctionSnippet('run_realtime_report_with_minute_ranges', [$propertyId]);
+
+        $this->assertStringContainsString('Report result', $output);
+    }
+
     public function testRunRunRealtimeReportWithMultipleMetrics()
     {
         $propertyId = self::requireEnv('GA_TEST_PROPERTY_ID');
