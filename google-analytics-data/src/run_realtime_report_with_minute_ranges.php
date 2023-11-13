@@ -38,7 +38,12 @@ use Google\Analytics\Data\V1beta\RunRealtimeReportRequest;
 use Google\Analytics\Data\V1beta\RunRealtimeReportResponse;
 
 /**
- * Runs a realtime report on a Google Analytics 4 property.
+ * Runs a realtime report on a Google Analytics 4 property. Dimensions field is
+ * omitted in the query, which results in total values of active users returned
+ * for each minute range in the report.
+ *
+ * Note the `dateRange` dimension added to the report response automatically as
+ * a result of querying multiple minute ranges.
  * @param string $propertyId Your GA-4 Property ID
  */
 function run_realtime_report_with_minute_ranges(string $propertyId)
@@ -67,7 +72,6 @@ function run_realtime_report_with_minute_ranges(string $propertyId)
  */
 function printRunRealtimeReportWithMinuteRangesResponse(RunRealtimeReportResponse $response)
 {
-    // [START analyticsdata_print_run_realtime_report_response_header]
     printf('%s rows received%s', $response->getRowCount(), PHP_EOL);
     foreach ($response->getDimensionHeaders() as $dimensionHeader) {
         printf('Dimension header name: %s%s', $dimensionHeader->getName(), PHP_EOL);
@@ -80,10 +84,6 @@ function printRunRealtimeReportWithMinuteRangesResponse(RunRealtimeReportRespons
             PHP_EOL
         );
     }
-    // [END analyticsdata_print_run_realtime_report_response_header]
-
-    // [START analyticsdata_print_run_realtime_report_response_rows]
-    print 'Report result: ' . PHP_EOL;
 
     foreach ($response->getRows() as $row) {
         printf(
@@ -92,7 +92,6 @@ function printRunRealtimeReportWithMinuteRangesResponse(RunRealtimeReportRespons
             $row->getMetricValues()[0]->getValue()
         );
     }
-    // [END analyticsdata_print_run_realtime_report_response_rows]
 }
 // [END analyticsdata_run_realtime_report_with_minute_ranges]
 
