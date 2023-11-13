@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2022 Google LLC.
  *
@@ -79,7 +80,7 @@ function printGetCommonMetadata(Metadata $response)
         );
         printf(
             'custom definition: %s' . PHP_EOL,
-            $dimension->getCustomDefinition()? 'true' : 'false'
+            $dimension->getCustomDefinition() ? 'true' : 'false'
         );
         if ($dimension->getDeprecatedApiNames()->count() > 0) {
             print('Deprecated API names: ');
@@ -101,7 +102,7 @@ function printGetCommonMetadata(Metadata $response)
         );
         printf(
             'custom definition: %s' . PHP_EOL,
-            $metric->getCustomDefinition()? 'true' : 'false'
+            $metric->getCustomDefinition() ? 'true' : 'false'
         );
         if ($metric->getDeprecatedApiNames()->count() > 0) {
             print('Deprecated API names: ');
