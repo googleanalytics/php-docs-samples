@@ -45,4 +45,4 @@ value of the Google Analytics 4 property id you want to access.
 
 * See [LICENSE](LICENSE)
 
-[adc]: https://cloud.google.com/docs/authentication/production#obtaining_and_providing_service_account_credentials_manually
+[adc]: https://cloud.google.com/docs/authentication#adc
