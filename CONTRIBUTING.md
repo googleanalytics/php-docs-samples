@@ -42,19 +42,8 @@ Write samples according to the [sample style guide](https://googlecloudplatform.
 To run the tests in a samples directory, you will need to install
 [Composer](http://getcomposer.org/doc/00-intro.md).
 
-First install the testing dependencies which are shared across all samples:
-
-```
-composer install -d testing/
-```
-
-Next, install the dependencies for the individual sample you're testing:
-
-```
-SAMPLES_DIRECTORY=translate
-cd $SAMPLES_DIRECTORY
-composer install
-```
+First install dependencies as described in the
+[README.md](google-analytics-data/README.md).
 
 ### Environment variables
 Some tests require specific environment variables to run. PHPUnit will skip the tests
@@ -64,27 +53,17 @@ to run against any sample project as follows:
 
 ```
 export GOOGLE_PROJECT_ID=YOUR_PROJECT_ID
-export GOOGLE_STORAGE_BUCKET=YOUR_BUCKET
+export GA_TEST_PROPERTY_ID=YOUR_GA4_PROPERTY_ID
 ```
-
-If you have access to the Google Cloud Kokoro project, decrypt the
-`.kokoro/secrets.sh.enc` file and load those environment variables. Follow
-the instructions in [.kokoro/secrets-example.sh](.kokoro/secrets-example.sh).
-
-If your tests require new environment variables, you can set them up in
-`.kokoro/secrets.sh.enc` so they pass on Kokoro. For instructions on managing those
-variables, view [.kokoro/secrets-example.sh](.kokoro/secrets-example.sh) for more
-information.
 
 ### Run the tests
 
 Once the dependencies are installed and the environment variables set, you can run the
 tests in a samples directory.
 ```
-cd $SAMPLES_DIRECTORY
+cd google-analytics-data
 # Execute the "phpunit" installed for the shared dependencies
-PATH_TO_REPO=/path/to/php-docs-samples
-$PATH_TO_REPO/testing/vendor/bin/phpunit
+./vendor/bin/phpunit
 ```
 
 Use `phpunit -v` to get a more detailed output if there are errors.
@@ -102,17 +81,15 @@ recommendations. This is enforced using [PHP CS Fixer][php-cs-fixer], using the 
 Install that by running
 
 ```
-composer global require friendsofphp/php-cs-fixer
+RUN composer require --dev friendsofphp/php-cs-fixer
 ```
 
 Then to fix your directory or file run
 
 ```
-php-cs-fixer fix . --config .php-cs-fixer.dist.php
-php-cs-fixer fix path/to/file --config .php-cs-fixer.dist.php
+./vendor/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php .
+./vendor/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php path/to/file
 ```
-
-The [DLP snippets](https://github.com/GoogleCloudPlatform/php-docs-samples/tree/main/dlp) are an example of snippets following the latest style guidelines.
 
 [psr2]: http://www.php-fig.org/psr/psr-2/
 [psr4]: http://www.php-fig.org/psr/psr-4/
