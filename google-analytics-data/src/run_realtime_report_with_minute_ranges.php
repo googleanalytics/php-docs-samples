@@ -85,6 +85,7 @@ function printRunRealtimeReportWithMinuteRangesResponse(RunRealtimeReportRespons
         );
     }
 
+    print 'Report result: ' . PHP_EOL;
     foreach ($response->getRows() as $row) {
         printf(
             '%s %s' . PHP_EOL,
