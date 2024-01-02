@@ -47,6 +47,7 @@ function run_report_with_pagination(string $propertyId)
     // Create an instance of the Google Analytics Data API client library.
     $client = new BetaAnalyticsDataClient();
 
+    // [START analyticsdata_run_report_with_pagination_page1]
     // Make an API call.
     $request = (new RunReportRequest())
         ->setProperty('properties/' . $propertyId)
@@ -68,19 +69,42 @@ function run_report_with_pagination(string $propertyId)
         ])
         ->setLimit(100000)
         ->setOffset(0);
-    $response = $client->runReport($request);
 
-    printRunReportResponseWithPagination($response);
+    $requestCount = 1;
+    printf('Sending request #%d' . PHP_EOL, $requestCount);
+
+    $response = $client->runReport($request);
+    # [END analyticsdata_run_report_with_pagination_page1]
+
+    printRunReportResponseWithPagination($response, $requestCount);
+
+    // [START analyticsdata_run_report_with_pagination_page2]
+    $rowsReceived = count($response->getRows());
+    $totalRows = $response->getRowCount();
+
+    // Run the same report with an increased offset value to retrieve each additional
+    // page until all rows are received.
+    while ($rowsReceived < $totalRows) {
+        $request = $request->setOffset($rowsReceived);
+        $requestCount++;
+        printf('Sending request #%d' . PHP_EOL, $requestCount);
+
+        $response = $client->runReport($request);
+        $rowsReceived += count($response->getRows());
+        printRunReportResponseWithPagination($response, $requestCount);
+    }
+    // [END analyticsdata_run_report_with_pagination_page2]
 }
 
 /**
  * Print results of a runReport call.
  * @param RunReportResponse $response
+ * @param int $requestCount
  */
-function printRunReportResponseWithPagination(RunReportResponse $response)
+function printRunReportResponseWithPagination(RunReportResponse $response, int $requestCount)
 {
     // [START analyticsdata_print_run_report_response_header]
-    printf('%s rows received%s', $response->getRowCount(), PHP_EOL);
+    printf('%s rows received for request #%d%s', count($response->getRows()), $requestCount, PHP_EOL);
     foreach ($response->getDimensionHeaders() as $dimensionHeader) {
         printf('Dimension header name: %s%s', $dimensionHeader->getName(), PHP_EOL);
     }
