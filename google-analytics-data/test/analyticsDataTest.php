@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Cloud\Samples\Analytics\Data\Tests;
+namespace Google\Analytics\Data\Samples\Tests;
 
 use Google\ApiCore\ValidationException;
 use Google\Cloud\TestUtils\TestTrait;

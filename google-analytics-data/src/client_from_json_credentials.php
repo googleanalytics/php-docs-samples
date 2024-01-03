@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Cloud\Samples\Analytics\Data;
+namespace Google\Analytics\Data\Samples;
 
 /**
  * This file is to be used as an example only!
@@ -49,4 +49,4 @@ function client_from_json_credentials(string $credentialsJsonPath)
 
 // The following 2 lines are only needed to run the samples
 require_once __DIR__ . '/../testing/sample_helpers.php';
-return \Google\Cloud\Samples\execute_sample(__FILE__, __NAMESPACE__, $argv);
+return \Google\Analytics\Data\Samples\execute_sample(__FILE__, __NAMESPACE__, $argv);

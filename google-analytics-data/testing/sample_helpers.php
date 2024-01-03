@@ -1,6 +1,6 @@
 <?php
 
-namespace Google\Cloud\Samples;
+namespace Google\Analytics\Data\Samples;
 
 use ReflectionFunction;
 
