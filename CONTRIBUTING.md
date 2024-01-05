@@ -81,7 +81,7 @@ recommendations. This is enforced using [PHP CS Fixer][php-cs-fixer], using the 
 Install that by running
 
 ```
-RUN composer require --dev friendsofphp/php-cs-fixer
+composer require --dev friendsofphp/php-cs-fixer
 ```
 
 Then to fix your directory or file run
