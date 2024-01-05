@@ -35,15 +35,14 @@ accept your pull requests.
 
 Write samples according to the [sample style guide](https://googlecloudplatform.github.io/samples-style-guide/).
 
-## Testing your code changes.
+## Testing your code changes
 
 ### Install dependencies
 
-To run the tests in a samples directory, you will need to install
-[Composer](http://getcomposer.org/doc/00-intro.md).
-
-First install dependencies as described in the
-[README.md](google-analytics-data/README.md).
+Change into the directory of the project you want to test (either
+`google-analytics-admin` or `google-analytics-data`), configure
+[Composer](http://getcomposer.org/doc/00-intro.md) and install dependencies as
+described in the directory's `README.md`.
 
 ### Environment variables
 Some tests require specific environment variables to run. PHPUnit will skip the tests
@@ -54,12 +53,15 @@ to run against any sample project as follows:
 ```
 export GOOGLE_PROJECT_ID=YOUR_PROJECT_ID
 export GA_TEST_PROPERTY_ID=YOUR_GA4_PROPERTY_ID
+# This value is only required by Admin API samples tests.
+export GA_TEST_ACCOUNT_ID=
 ```
 
 ### Run the tests
 
 Once the dependencies are installed and the environment variables set, you can run the
-tests in a samples directory.
+tests in a samples directory. For example:
+
 ```
 cd google-analytics-data
 # Execute the "phpunit" installed for the shared dependencies

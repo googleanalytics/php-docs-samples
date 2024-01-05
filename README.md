@@ -2,8 +2,10 @@
 
 PHP samples for [Google Analytics APIs][ga].
 
-Check out the [`README.md`](google-analytics-data/README.md) in the
-`google-analytics-data` directory to get started.
+Check out the `README.md` in one of the following directories to get started:
+
+- Admin API: [README.md](google-analytics-admin/README.md)
+- Data API: [README.md](google-analytics-data/README.md)
 
 ## Contributing
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Google LLC.
+ * Copyright 2024 Google LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,20 @@
  * limitations under the License.
  */
 
-/* Google Analytics Admin API sample quickstart application.
-
-This application demonstrates the usage of the Analytics Admin API to list
-all Google Analytics accounts available to the authenticated user, using
-service account credentials.
-
-Before you start the application, please review the comments starting with
-"TODO(developer)" and update the code to use the correct values.
-
-Usage:
-  composer update
-  php quickstart.php
- */
+/**
+ * Google Analytics Admin API sample quickstart application.
+ *
+ * This application demonstrates the usage of the Analytics Admin API to list
+ * all Google Analytics accounts available to the authenticated user, using
+ * service account credentials.
+ *
+ * Before you start the application, please review the comments starting with
+ * "TODO(developer)" and update the code to use the correct values.
+ *
+ * Usage:
+ * composer update
+ * php quickstart.php
+*/
 
 // [START analytics_admin_quickstart]
 require 'vendor/autoload.php';
