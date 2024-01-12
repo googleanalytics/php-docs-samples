@@ -25,7 +25,11 @@
 namespace Google\Analytics\Data\Samples;
 
 // [START analyticsdata_run_funnel_report]
-use Google\Analytics\Data\V1alpha\AlphaAnalyticsDataClient;
+
+// TODO(jradcliff): This client is missing from the library. See:
+// https://github.com/googleapis/google-cloud-php/issues/6961.
+
+use Google\Analytics\Data\V1alpha\Client\AlphaAnalyticsDataClient;
 use Google\Analytics\Data\V1alpha\DateRange;
 use Google\Analytics\Data\V1alpha\Dimension;
 use Google\Analytics\Data\V1alpha\FunnelBreakdown;
