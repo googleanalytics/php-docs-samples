@@ -22,7 +22,7 @@
  * for more information.
  */
 
-namespace Google\Cloud\Samples\Analytics\Data;
+namespace Google\Analytics\Data\Samples;
 
 // [START analyticsdata_run_funnel_report]
 use Google\Analytics\Data\V1alpha\AlphaAnalyticsDataClient;
@@ -233,4 +233,4 @@ function printFunnelSubReport(FunnelSubReport $subReport) {
 
 // The following 2 lines are only needed to run the samples
 require_once __DIR__ . '/../testing/sample_helpers.php';
-return \Google\Cloud\Samples\execute_sample(__FILE__, __NAMESPACE__, $argv);
+return \Google\Analytics\Data\Samples\execute_sample(__FILE__, __NAMESPACE__, $argv);
