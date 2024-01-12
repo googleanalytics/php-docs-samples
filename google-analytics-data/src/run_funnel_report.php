@@ -28,21 +28,18 @@ namespace Google\Analytics\Data\Samples;
 use Google\Analytics\Data\V1alpha\AlphaAnalyticsDataClient;
 use Google\Analytics\Data\V1alpha\DateRange;
 use Google\Analytics\Data\V1alpha\Dimension;
-use Google\Analytics\Data\V1alpha\DimensionHeader;
 use Google\Analytics\Data\V1alpha\FunnelBreakdown;
 use Google\Analytics\Data\V1alpha\FunnelEventFilter;
 use Google\Analytics\Data\V1alpha\FunnelFieldFilter;
 use Google\Analytics\Data\V1alpha\FunnelFilterExpression;
 use Google\Analytics\Data\V1alpha\FunnelFilterExpressionList;
 use Google\Analytics\Data\V1alpha\FunnelStep;
+use Google\Analytics\Data\V1alpha\Funnel;
 use Google\Analytics\Data\V1alpha\FunnelSubReport;
-use Google\Analytics\Data\V1alpha\MetricHeader;
-use Google\Analytics\Data\V1alpha\Row;
 use Google\Analytics\Data\V1alpha\RunFunnelReportRequest;
 use Google\Analytics\Data\V1alpha\RunFunnelReportResponse;
-use Google\Analytics\Data\V1alpha\SamplingMetadata;
-use Google\Analytics\Data\V1alpha\Filter\StringFilter;
-use Google\Analytics\Data\V1alpha\Filter\StringFilter\MatchType;
+use Google\Analytics\Data\V1alpha\StringFilter;
+use Google\Analytics\Data\V1alpha\StringFilter\MatchType;
 
 /**
  * Runs a funnel query to build a report with 5 funnel steps.
@@ -56,13 +53,14 @@ use Google\Analytics\Data\V1alpha\Filter\StringFilter\MatchType;
  * The report configuration reproduces the default funnel report provided in the Funnel
  * Exploration template of the Google Analytics UI. See more at
  * https://support.google.com/analytics/answer/9327974
- * 
+ *
  * @param string $propertyId Your GA-4 Property ID
  */
 function run_funnel_report(string $propertyId)
 {
     // Create an instance of the Google Analytics Data API client library.
     $client = new AlphaAnalyticsDataClient();
+
 
     // Create the funnel report request.
     $request = (new RunFunnelReportRequest())
@@ -75,7 +73,7 @@ function run_funnel_report(string $propertyId)
         ])
         ->setFunnelBreakdown(
             new FunnelBreakdown([
-                'breakdownDimension' =>
+                'breakdown_dimension' =>
                     new Dimension([
                         'name' => 'deviceCategory'
                     ])
@@ -105,7 +103,7 @@ function run_funnel_report(string $propertyId)
             ])
         ])
     ]);
-    
+ 
     // 2. Add organic visitors step.
     $request->getFunnel()->getSteps()[] = new FunnelStep([
         'name' => 'Organic visitors',
@@ -125,7 +123,7 @@ function run_funnel_report(string $propertyId)
     $request->getFunnel()->getSteps()[] = new FunnelStep([
         'name' => 'Session start',
         'filter_expression' => new FunnelFilterExpression([
-            new FunnelEventFilter([
+            'funnel_event_filter' => new FunnelEventFilter([
                 'event_name' => 'session_start',
             ])
         ])
@@ -184,7 +182,8 @@ function run_funnel_report(string $propertyId)
  * Print results of a runFunnelReport call.
  * @param RunFunnelReportResponse $response
  */
-function printRunFunnelReportResponse(RunFunnelReportResponse $response) {
+function printRunFunnelReportResponse(RunFunnelReportResponse $response)
+{
     print 'Report result: ';
     print '=== FUNNEL VISUALIZATION ===';
     printFunnelSubReport($response->getFunnelVisualization());
@@ -197,7 +196,8 @@ function printRunFunnelReportResponse(RunFunnelReportResponse $response) {
  * Print the contents of a FunnelSubReport object.
  * @param FunnelSubReport $subReport
  */
-function printFunnelSubReport(FunnelSubReport $subReport) {
+function printFunnelSubReport(FunnelSubReport $subReport)
+{
     print 'Dimension headers:';
     foreach ($subReport->getDimensionHeaders() as $dimensionHeader) {
         print $dimensionHeader->getName();
