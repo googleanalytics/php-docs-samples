@@ -1,0 +1,11 @@
+{
+    "require": {
+        "google/analytics-admin": "^0.20.0"
+    },
+    "require-dev": {
+        "google/cloud-tools": "dev-main",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpunit/phpunit": "^9.0",
+        "friendsofphp/php-cs-fixer": "^3.46"
+    }
+}
