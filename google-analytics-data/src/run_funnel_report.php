@@ -25,10 +25,6 @@
 namespace Google\Analytics\Data\Samples;
 
 // [START analyticsdata_run_funnel_report]
-
-// TODO(jradcliff): This client is missing from the library. See:
-// https://github.com/googleapis/google-cloud-php/issues/6961.
-
 use Google\Analytics\Data\V1alpha\Client\AlphaAnalyticsDataClient;
 use Google\Analytics\Data\V1alpha\DateRange;
 use Google\Analytics\Data\V1alpha\Dimension;
@@ -188,11 +184,11 @@ function run_funnel_report(string $propertyId)
  */
 function printRunFunnelReportResponse(RunFunnelReportResponse $response)
 {
-    print 'Report result: ';
-    print '=== FUNNEL VISUALIZATION ===';
+    print 'Report result: ' . PHP_EOL;
+    print '=== FUNNEL VISUALIZATION ===' . PHP_EOL;
     printFunnelSubReport($response->getFunnelVisualization());
 
-    print '=== FUNNEL TABLE ===';
+    print '=== FUNNEL TABLE ===' . PHP_EOL;
     printFunnelSubReport($response->getFunnelTable());
 }
 
@@ -202,30 +198,30 @@ function printRunFunnelReportResponse(RunFunnelReportResponse $response)
  */
 function printFunnelSubReport(FunnelSubReport $subReport)
 {
-    print 'Dimension headers:';
+    print 'Dimension headers:' . PHP_EOL;
     foreach ($subReport->getDimensionHeaders() as $dimensionHeader) {
-        print $dimensionHeader->getName();
+        print $dimensionHeader->getName() . PHP_EOL;
     }
 
-    print PHP_EOL . 'Metric headers:';
+    print PHP_EOL . 'Metric headers:' . PHP_EOL;
     foreach ($subReport->getMetricHeaders() as $metricHeader) {
-        print $metricHeader->getName();
+        print $metricHeader->getName() . PHP_EOL;
     }
 
     print PHP_EOL . 'Dimension and metric values for each row in the report:';
     foreach ($subReport->getRows() as $rowIndex => $row) {
-        print 'Row #' . $rowIndex;
+        print PHP_EOL . 'Row #' . $rowIndex . PHP_EOL;
         foreach ($row->getDimensionValues() as $dimIndex => $dimValue) {
             $dimName = $subReport->getDimensionHeaders()[$dimIndex]->getName();
-            print $dimName . ": '" . $dimValue->getValue() . "'";
+            print $dimName . ": '" . $dimValue->getValue() . "'" . PHP_EOL;
         }
         foreach ($row->getMetricValues() as $metricIndex => $metricValue) {
             $metricName = $subReport->getMetricHeaders()[$metricIndex]->getName();
-            print $metricName . ": '" . $metricValue->getValue() . "'";
+            print $metricName . ": '" . $metricValue->getValue() . "'" . PHP_EOL;
         }
     }
 
-    print PHP_EOL . 'Sampling metadata for each date range:';
+    print PHP_EOL . 'Sampling metadata for each date range:' . PHP_EOL;
     foreach($subReport->getMetadata()->getSamplingMetadatas() as $metadataIndex => $metadata) {
         printf('Sampling metadata for date range #%d: samplesReadCount=%d' .
             'samplingSpaceSize=%d%s',
