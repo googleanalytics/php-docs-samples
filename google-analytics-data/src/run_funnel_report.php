@@ -61,7 +61,6 @@ function run_funnel_report(string $propertyId)
     // Create an instance of the Google Analytics Data API client library.
     $client = new AlphaAnalyticsDataClient();
 
-
     // Create the funnel report request.
     $request = (new RunFunnelReportRequest())
         ->setProperty('properties/' . $propertyId)
@@ -103,7 +102,7 @@ function run_funnel_report(string $propertyId)
             ])
         ])
     ]);
- 
+
     // 2. Add organic visitors step.
     $request->getFunnel()->getSteps()[] = new FunnelStep([
         'name' => 'Organic visitors',
