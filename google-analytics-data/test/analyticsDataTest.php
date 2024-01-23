@@ -228,4 +228,13 @@ class AnalyticsDataTest extends TestCase
 
         $this->assertStringContainsString('Tokens per day quota consumed', $output);
     }
+
+    public function testRunFunnelReport()
+    {
+        $propertyId = self::requireEnv('GA_TEST_PROPERTY_ID');
+        $output = $this->runFunctionSnippet('run_funnel_report', [$propertyId]);
+
+        $this->assertStringContainsString('FUNNEL VISUALIZATION', $output);
+        $this->assertStringContainsString('FUNNEL TABLE', $output);
+    }
 }
