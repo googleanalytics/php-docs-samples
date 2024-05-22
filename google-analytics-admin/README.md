@@ -7,13 +7,13 @@
 
 ## Description
 
-These samples show how to use the [Google Analytics Data API][analyticsdata-api]
+These samples show how to use the [Google Analytics Admin API][analyticsadmin-api]
 from PHP.
 
 [analyticsadmin-api]: https://developers.google.com/analytics/devguides/config/admin/v1
 
 ## Build and Run
-1.  **Enable APIs** - [Enable the Analytics Data API](https://console.cloud.google.com/flows/enableapi?apiid=analyticsadmin.googleapis.com)
+1.  **Enable APIs** - [Enable the Analytics Admin API](https://console.cloud.google.com/flows/enableapi?apiid=analyticsadmin.googleapis.com)
     and create a new project or select an existing project.
 2.  **Download The Credentials** - Configure your project using [Application Default Credentials][adc].
     Click "Go to credentials" after enabling the APIs. Click "Create Credentials"
