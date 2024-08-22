@@ -64,7 +64,7 @@ function run_report_with_pagination(string $propertyId)
         ])
         ->setMetrics([
             new Metric(['name' => 'sessions']),
-            new Metric(['name' => 'conversions']),
+            new Metric(['name' => 'keyEvents']),
             new Metric(['name' => 'totalRevenue']),
         ])
         ->setLimit(100000)
