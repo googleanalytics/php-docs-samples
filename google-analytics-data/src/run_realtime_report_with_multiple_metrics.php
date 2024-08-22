@@ -51,7 +51,7 @@ function run_realtime_report_with_multiple_metrics(string $propertyId)
         ->setDimensions([new Dimension(['name' => 'unifiedScreenName'])])
         ->setMetrics([
             new Metric(['name' => 'screenPageViews']),
-            new Metric(['name' => 'conversions']),
+            new Metric(['name' => 'keyEvents']),
         ]);
     $response = $client->runRealtimeReport($request);
 
