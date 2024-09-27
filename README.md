@@ -12,4 +12,3 @@ Check out the `README.md` in one of the following directories to get started:
 Contributions welcome! See the [Contributing Guide](CONTRIBUTING.md).
 
 [ga]: https://developers.google.com/analytics
-
