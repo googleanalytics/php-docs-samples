@@ -1,0 +1,26 @@
+{
+    "extends": [
+        // https://docs.renovatebot.com/presets-config/#configrecommended
+        "config:recommended",
+        "schedule:earlyMondays",
+        ":ignoreUnstable",
+    ],
+    // Apply label to PRs.
+    "labels": [
+        "dependencies",
+    ],
+    // https://docs.renovatebot.com/configuration-options/#minimumreleaseage
+    "minimumReleaseAge": "3 days",
+    "dependencyDashboardLabels": [
+        "type: process",
+    ],
+    "rebaseWhen": "behind-base-branch",
+    "semanticCommits": "enabled",
+    // Create PR for vulnerability alerts immediately.
+    "vulnerabilityAlerts": {
+        "labels": [
+            "security"
+        ],
+        "minimumReleaseAge": null
+    },
+}
