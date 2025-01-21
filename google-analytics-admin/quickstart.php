@@ -55,7 +55,7 @@ $request = new ListAccountsRequest();
 $response = $client->listAccounts($request);
 
 print 'Result:' . PHP_EOL;
-foreach($response->iterateAllElements() as $account) {
+foreach ($response->iterateAllElements() as $account) {
     print 'Account name: ' . $account->getName() . PHP_EOL;
     print 'Display name: ' . $account->getDisplayName() . PHP_EOL;
     print 'Country code: ' . $account->getRegionCode() . PHP_EOL;

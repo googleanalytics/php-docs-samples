@@ -221,7 +221,7 @@ function printFunnelSubReport(FunnelSubReport $subReport)
     }
 
     print PHP_EOL . 'Sampling metadata for each date range:' . PHP_EOL;
-    foreach($subReport->getMetadata()->getSamplingMetadatas() as $metadataIndex => $metadata) {
+    foreach ($subReport->getMetadata()->getSamplingMetadatas() as $metadataIndex => $metadata) {
         printf('Sampling metadata for date range #%d: samplesReadCount=%d' .
             'samplingSpaceSize=%d%s',
             $metadataIndex, $metadata->getSamplesReadCount(), $metadata->getSamplingSpaceSize(), PHP_EOL);
