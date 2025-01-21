@@ -48,7 +48,7 @@ function properties_list(string $accountId)
 
     print 'Result:' . PHP_EOL;
     $i = 0;
-    foreach($response->iterateAllElements() as $property) {
+    foreach ($response->iterateAllElements() as $property) {
         printf('Property #%d resource name: %s, parent: %s, display name: "%s", currency: %s, time zone: %s, create time: %s, update time: %s%s',
             $i++,
             $property->getName(),
