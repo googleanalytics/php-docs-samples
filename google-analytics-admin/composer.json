@@ -1,6 +1,6 @@
 {
     "require": {
-        "google/analytics-admin": "^0.24.0"
+        "google/analytics-admin": "^0.25.0"
     },
     "require-dev": {
         "google/cloud-tools": "dev-main",
