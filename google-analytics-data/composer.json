@@ -1,5 +1,6 @@
 {
     "require": {
+        "php": ">=8.1",
         "google/analytics-data": "^0.22.0"
     },
     "require-dev": {
