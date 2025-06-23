@@ -1,7 +1,7 @@
 {
     "require": {
         "php": ">=8.1",
-        "google/analytics-admin": "^0.28.0"
+        "google/analytics-admin": "^0.29.0"
     },
     "require-dev": {
         "google/cloud-tools": "dev-main",
