@@ -45,8 +45,9 @@ $property_id = 'YOUR-GA4-PROPERTY-ID';
 
 // Using a default constructor instructs the client to use the credentials
 // specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
-// See https://cloud.google.com/docs/authentication/production for more information
-// about managing credentials.
+// See https://cloud.google.com/docs/authentication#principal for more information
+// about managing credentials. For client configuration options, see
+// https://docs.cloud.google.com/php/docs/reference/analytics-admin/latest.
 $client = new AnalyticsAdminServiceClient();
 
 // Calls listAccounts() method of the Google Analytics Admin API and prints
