@@ -29,8 +29,8 @@
             // the same release process.
             "description": "Group Google Analytics API updates",
             "matchPackageNames": [
-                "google-analytics-data",
-                "google-analytics-admin"
+                "google/analytics-data",
+                "google/analytics-admin"
             ],
             "groupName": "Google Analytics APIs"
         }
